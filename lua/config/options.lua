@@ -1,7 +1,13 @@
 local opt = vim.opt
 
+-- Enable mouse for all modes
+opt.mouse = 'a'
+
 -- Reload file on external changes
 opt.autoread = true
+
+-- Save undo history
+opt.undofile = true
 
 -- Number of lines before/after cursor during scroll
 opt.scrolloff = 6
@@ -53,4 +59,8 @@ opt.timeoutlen = 250
 
 -- Do not unload hidden buffers
 opt.hidden = true
+
+-- Configure default split direction
+opt.splitright = true
+opt.splitbelow = true
 
