@@ -11,7 +11,7 @@ return {
             }
         },
         dependencies = {
-            { 'nvim-tree/nvim-web-devicons' },
+            { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
         },
     },
     {
@@ -19,13 +19,13 @@ return {
         event = 'VeryLazy',
         opts = {},
         dependencies = {
-            { 'nvim-tree/nvim-web-devicons' },
+            { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
         },
     },
     {
         'akinsho/bufferline.nvim',
         dependencies = {
-            { 'nvim-tree/nvim-web-devicons' },
+            { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
         },
         opts = {},
     },
