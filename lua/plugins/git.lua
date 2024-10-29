@@ -9,6 +9,10 @@ return {
             'sindrets/diffview.nvim',
             'nvim-telescope/telescope.nvim'
         },
+        keys = {
+            { '<Leader>g', ':Neogit<cr>', desc = 'Open Neogit' },
+            { '<Leader>Gl', ':Neogit log<cr>b<cr>', desc = 'Open Neogit log' },
+        },
     },
     {
         'lewis6991/gitsigns.nvim',
