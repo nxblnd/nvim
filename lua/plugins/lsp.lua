@@ -116,7 +116,16 @@ return {
             'hrsh7th/cmp-nvim-lsp',
             'hrsh7th/cmp-buffer',
             'hrsh7th/cmp-path',
-            'L3MON4D3/LuaSnip',
+            'saadparwaiz1/cmp_luasnip',
+            {
+                'L3MON4D3/LuaSnip',
+                dependencies = {
+                    'rafamadriz/friendly-snippets',
+                    config = function()
+                        require('luasnip.loaders.from_vscode').lazy_load()
+                    end,
+                },
+            },
         },
         opts = {
             snippet = {
@@ -133,13 +142,18 @@ return {
         },
     },
     {
-        'L3MON4D3/LuaSnip',
-        dependencies = {
-            'rafamadriz/friendly-snippets',
-            config = function()
-                require('luasnip.loaders.from_vscode').lazy_load()
-            end,
+        'stevearc/conform.nvim',
+        event = { 'BufWritePre' },
+        cmd = { 'ConformInfo' },
+        keys = {
+            { '<Leader>f', function() require('conform').format({ async = true }) end, desc = 'Format buffer' },
         },
+        opts = {
+            formatters_by_ft = {},
+            default_format_opts = {
+                lsp_format = 'fallback'
+            },
+        }
     },
 }
 
