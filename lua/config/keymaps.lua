@@ -1,8 +1,13 @@
-function keymap(kmap, func, desc, opts)
+function keymap(lhs, rhs, desc, opts)
     mode = (opts and opts.mode) or 'n'
     buffer = (opts and opts.buffer) or false
-    vim.keymap.set(mode, kmap, func, { desc = desc, buffer = buffer })
+    vim.keymap.set(mode, lhs, rhs, { desc = desc, buffer = buffer })
 end
+
+-- Quick nvim config updates
+keymap('<leader><leader>x', '<cmd>source %<cr>', 'Source current file')
+keymap('<space>x', ':.lua<cr>', 'Run current line as lua script')
+keymap('<space>x', ':lua<cr>', 'Run currect selection as lua script', { mode = 'v' })
 
 -- Better 'o' and 'O'
 keymap('<Leader>o', 'o<Esc>o', 'Add 2 lines below and go into Insert mode')
@@ -19,4 +24,4 @@ keymap('<C-k>', '<C-w><C-k>', 'Move to upper split')
 keymap('<C-l>', '<C-w><C-l>', 'Move to right split')
 
 -- Misc keymaps
-keymap('<Esc><Esc>', '<C-\\><C-n>', 'Exit terminal mode', 't')
+keymap('<Esc><Esc>', '<C-\\><C-n>', 'Exit terminal mode', { mode = 't' })
