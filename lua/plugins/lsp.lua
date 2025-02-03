@@ -176,5 +176,8 @@ return {
             },
         }
     },
+    {
+        "mfussenegger/nvim-ansible",
+    },
 }
 
