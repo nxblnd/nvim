@@ -57,4 +57,10 @@ return {
             { '<Leader>qd', function() require('persistence').stop() end, desc = 'Do not save current session' },
         },
     },
+    {
+        'stevearc/oil.nvim',
+        opts = {},
+        dependencies = { 'nvim-tre/nvim-web-devicons' },
+        lazy = false,
+    },
 }
