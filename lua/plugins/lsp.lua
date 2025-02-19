@@ -1,27 +1,33 @@
 local servers = {
-    awk_ls = {}, -- AWK
+    ['ansible-lint'] = {}, -- Ansible linter
     ansiblels = {}, -- Ansible
+    awk_ls = {}, -- AWK
     bashls = {}, -- Bash
     clangd = {}, -- C/C++
-    cmake = {}, -- CMake
+    ['cmake-language-server'] = {}, -- CMake
     cssls = {}, -- CSS
-    dockerls = {}, -- Dockerfile
     docker_compose_language_service = {}, -- Docker compose
+    dockerls = {}, -- Dockerfile
     eslint = {}, -- Eslint
     gopls = {}, -- Go
     html = {}, -- HTML
-    jsonls = {}, -- JSON
     java_language_server = {}, -- Java
-    -- tsserver = {}, -- JavaScript/TypeScript TODO: problems???
     jqls = {}, -- JQ
-    texlab = {}, -- LaTeX
+    jsonls = {}, -- JSON
+    lemminx = {}, -- XML
     lua_ls = {}, -- Lua
+    ['nginx-language-server'] = {}, -- nginx
     pylsp = {}, -- Python
+    ruff = {}, -- Python linter
     sqlls = {}, -- SQL
+    systemdlint = {}, -- SystemD unit linter
+    texlab = {}, -- LaTeX
+    ts_ls = {}, -- JavaScript/TypeScript
     volar = {}, -- Vue
-    -- limminx = {}, -- XML TODO: problems ???
     yamlls = {}, -- YAML
 }
+
+local keymap = require('helpers.keymap').keymap
 
 return {
     {
@@ -31,7 +37,11 @@ return {
             {
                 'williamboman/mason.nvim',
                 build = ':MasonUpdate',
-                config = true,
+                opts = {
+                    registries = {
+                        "github:mason-org/mason-registry",
+                    },
+                },
             },
             {
                 'williamboman/mason-lspconfig.nvim',
@@ -46,21 +56,21 @@ return {
         },
         config = function()
             local function create_keymaps(event_buffer)
-                local keymap = function(kmap, func, desc, mode)
-                    keymap_generic = require('../config/keymaps.lua')
-                    keymap_generic(kmap, func, desc, { mode = mode or 'n', buffer = event_buffer })
+                local buffered_keymap = function(kmap, func, desc, mode)
+                    keymap(kmap, func, desc, { mode = mode or 'n', buffer = event_buffer })
                 end
-                t_builtin = require('telescope.builtin')
 
-                keymap('gd', t_builtin.lsp_definitions, 'Goto definition')
-                keymap('gD', vim.lsp.buf.declaration, 'Goto declaration')
-                keymap('gr', t_builtin.lsp_references, 'Goto references')
-                keymap('gI', t_builtin.lsp_implementations, 'Goto implementation')
-                keymap('g<Leader>t', t_builtin.lsp_type_definitions, 'Goto type definition')
-                keymap('<Leader>sc', t_builtin.lsp_document_symbols, 'Search symbols in document')
-                keymap('<Leader>sC', t_builtin.lsp_workspace_symbols, 'Search symbols in workspace')
-                keymap('<Leader>cn', vim.lsp.buf.rename, 'Rename under cursor with LSP')
-                keymap('<Leader>a', vim.lsp.buf.code_action, 'Code action', { mode = { 'n', 'x' } })
+                local t_builtin = require('telescope.builtin')
+
+                buffered_keymap('gd', t_builtin.lsp_definitions, 'Goto definition')
+                buffered_keymap('gD', vim.lsp.buf.declaration, 'Goto declaration')
+                buffered_keymap('gr', t_builtin.lsp_references, 'Goto references')
+                buffered_keymap('gI', t_builtin.lsp_implementations, 'Goto implementation')
+                buffered_keymap('g<Leader>t', t_builtin.lsp_type_definitions, 'Goto type definition')
+                buffered_keymap('<Leader>sc', t_builtin.lsp_document_symbols, 'Search symbols in document')
+                buffered_keymap('<Leader>sC', t_builtin.lsp_workspace_symbols, 'Search symbols in workspace')
+                buffered_keymap('<Leader>cn', vim.lsp.buf.rename, 'Rename under cursor with LSP')
+                buffered_keymap('<Leader>a', vim.lsp.buf.code_action, 'Code action', { mode = { 'n', 'x' } })
             end
 
             local function hide_highlight(event_buffer)
@@ -91,8 +101,6 @@ return {
                 })
             end
 
-
-
             vim.api.nvim_create_autocmd('LspAttach', {
                 group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
                 callback = function(event)
@@ -105,7 +113,7 @@ return {
                     end
 
                     if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
-                        require('../config/keymaps.lua')('<Leader>th', function()
+                        keymap('<Leader>th', function()
                             vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
                         end, 'Toggle inlay hints')
                     end
