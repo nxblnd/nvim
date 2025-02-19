@@ -1,8 +1,4 @@
-function keymap(lhs, rhs, desc, opts)
-    mode = (opts and opts.mode) or 'n'
-    buffer = (opts and opts.buffer) or false
-    vim.keymap.set(mode, lhs, rhs, { desc = desc, buffer = buffer })
-end
+local keymap = require('helpers.keymap').keymap
 
 -- Quick nvim config updates
 keymap('<leader><leader>x', '<cmd>source %<cr>', 'Source current file')
@@ -15,7 +11,7 @@ keymap('<Leader>O', 'O<Esc>O', 'Add 2 lines above and go into Insert mode')
 
 -- Buffer navigation keymaps
 keymap('<Leader>h', ':bnext<cr>', 'Go to next buffer')
-keymap('<Leader>l', ':bprevious<cr>', 'Go to previous buffer') 
+keymap('<Leader>l', ':bprevious<cr>', 'Go to previous buffer')
 
 -- Split navigation keymaps
 keymap('<C-h>', '<C-w><C-h>', 'Move to left split')
@@ -25,3 +21,4 @@ keymap('<C-l>', '<C-w><C-l>', 'Move to right split')
 
 -- Misc keymaps
 keymap('<Esc><Esc>', '<C-\\><C-n>', 'Exit terminal mode', { mode = 't' })
+
