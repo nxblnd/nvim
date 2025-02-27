@@ -60,7 +60,7 @@ return {
     {
         'stevearc/oil.nvim',
         opts = {},
-        dependencies = { 'nvim-tre/nvim-web-devicons' },
+        dependencies = { 'nvim-tree/nvim-web-devicons' },
         lazy = false,
     },
 }
