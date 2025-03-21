@@ -28,3 +28,6 @@ keymap('<c-l>', '<c-w><c-l>', 'Move to right split')
 -- Misc keymaps
 keymap('<Esc><Esc>', '<c-\\><c-n>', 'Exit terminal mode', { mode = 't' })
 keymap('<leader>m', ':Oil<cr>', 'Open file manager')
+keymap('+', '<C-a>', 'Increment number')
+keymap('-', '<C-x>', 'Decrement number')
+
