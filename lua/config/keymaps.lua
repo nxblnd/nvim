@@ -21,4 +21,4 @@ keymap('<C-l>', '<C-w><C-l>', 'Move to right split')
 
 -- Misc keymaps
 keymap('<Esc><Esc>', '<C-\\><C-n>', 'Exit terminal mode', { mode = 't' })
-
+keymap('<leader>m', ':Oil<cr>', 'Open file manager')
