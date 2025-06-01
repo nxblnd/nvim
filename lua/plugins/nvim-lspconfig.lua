@@ -24,7 +24,7 @@ local servers = {
     systemdlint = {}, -- SystemD unit linter
     texlab = {}, -- LaTeX
     ts_ls = {}, -- JavaScript/TypeScript
-    volar = {}, -- Vue
+    vue_ls = {}, -- Vue
     yamlls = {}, -- YAML
 }
 
