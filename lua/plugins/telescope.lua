@@ -1,7 +1,17 @@
 local t_builtin = require('telescope.builtin')
+local actions = require('telescope.actions')
 
 return {
     'nvim-telescope/telescope.nvim',
+    opts = {
+        defaults = {
+            mappings = {
+                i = {
+                    ['<esc>'] = actions.close -- esc to quit telescope, skipping normal mode
+                },
+            },
+        },
+    },
     dependencies = {
         { 'nvim-lua/plenary.nvim' },
         { 'nvim-telescope/telescope-ui-select.nvim' },
