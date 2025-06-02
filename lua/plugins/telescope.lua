@@ -7,9 +7,12 @@ return {
         defaults = {
             mappings = {
                 i = {
-                    ['<esc>'] = actions.close -- esc to quit telescope, skipping normal mode
+                    ['<esc>'] = actions.close, -- esc to quit telescope, skipping normal mode
+                    ['<tab>'] = actions.move_selection_next,
+                    ['<s-tab>'] = actions.move_selection_previous,
                 },
             },
+            sorting_strategy = 'ascending',
         },
     },
     dependencies = {
