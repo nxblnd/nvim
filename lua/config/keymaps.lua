@@ -19,6 +19,12 @@ keymap('<C-j>', '<C-w><C-j>', 'Move to lower split')
 keymap('<C-k>', '<C-w><C-k>', 'Move to upper split')
 keymap('<C-l>', '<C-w><C-l>', 'Move to right split')
 
+-- Split resize keymaps
+keymap('<c-H>', '<c-W><', 'Decrease split columns')
+keymap('<c-J>', '<c-W>-', 'Decrease split rows')
+keymap('<c-K>', '<c-W>+', 'Increase split rows')
+keymap('<c-L>', '<c-W>>', 'Increase split columns')
+
 -- Misc keymaps
 keymap('<Esc><Esc>', '<C-\\><C-n>', 'Exit terminal mode', { mode = 't' })
 keymap('<leader>m', ':Oil<cr>', 'Open file manager')
