@@ -20,10 +20,10 @@ keymap('<c-k>', '<c-w><c-k>', 'Move to upper split')
 keymap('<c-l>', '<c-w><c-l>', 'Move to right split')
 
 -- Split resize keymaps
-keymap('<c-H>', '<c-W><', 'Decrease split columns')
-keymap('<c-J>', '<c-W>-', 'Decrease split rows')
-keymap('<c-K>', '<c-W>+', 'Increase split rows')
-keymap('<c-L>', '<c-W>>', 'Increase split columns')
+-- keymap('<c-H>', '<c-W><', 'Decrease split columns')
+-- keymap('<c-J>', '<c-W>-', 'Decrease split rows')
+-- keymap('<c-K>', '<c-W>+', 'Increase split rows')
+-- keymap('<c-L>', '<c-W>>', 'Increase split columns')
 
 -- Misc keymaps
 keymap('<Esc><Esc>', '<c-\\><c-n>', 'Exit terminal mode', { mode = 't' })
