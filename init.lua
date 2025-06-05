@@ -4,21 +4,29 @@ require('config.keymaps')
 require('config.autocmd')
 
 local lazypath = vim.fn.stdpath('data') .. 'lazy/lazy.nvim'
-if not (vim.uv or vim.loop).fs_stat(lazypath) then
-    vim.fn.system({
-        'git',
-        'clone',
-        '--filter=blob:none',
-        'https://github.com/folke/lazy.nvim.git',
-        '--branch=stable',
-        lazypath,
-    })
+
+local function check_lazy_install()
+    if not (vim.uv or vim.loop).fs_stat(lazypath) then
+        vim.fn.system({
+            'git',
+            'clone',
+            '--filter=blob:none',
+            'https://github.com/folke/lazy.nvim.git',
+            '--branch=stable',
+            lazypath,
+        })
+    end
 end
 
-vim.opt.rtp:prepend(lazypath)
+local function main()
+    check_lazy_install()
 
-require('lazy').setup('plugins')
-require('oil').setup()
+    vim.opt.rtp:prepend(lazypath)
 
-vim.cmd.colorscheme('onedark')
+    require('lazy').setup('plugins')
+
+    vim.cmd.colorscheme('tokyonight')
+end
+
+main()
 
