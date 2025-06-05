@@ -39,6 +39,7 @@ return {
             'go',
             'haskell',
             'html',
+            'http',
             'ini',
             'java',
             'javascript',
