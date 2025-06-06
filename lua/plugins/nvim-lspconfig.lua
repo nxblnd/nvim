@@ -19,6 +19,7 @@ local servers = {
     ['kulala-fmt'] = {}, -- Kulala
     lemminx = {}, -- XML
     lua_ls = {}, -- Lua
+    marksman = {}, -- Markdown
     ['nginx-language-server'] = {}, -- nginx
     pylsp = {}, -- Python
     ruff = {}, -- Python linter
