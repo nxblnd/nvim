@@ -24,6 +24,7 @@ local servers = {
     pylsp = {}, -- Python
     ruff = {}, -- Python linter
     sqlls = {}, -- SQL
+    systemd_ls = {}, -- SystemD
     systemdlint = {}, -- SystemD unit linter
     texlab = {}, -- LaTeX
     ts_ls = {}, -- JavaScript/TypeScript
