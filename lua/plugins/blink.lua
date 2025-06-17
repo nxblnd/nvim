@@ -9,7 +9,13 @@ return {
             ['<s-tab>'] = { 'select_prev', 'fallback' },
         },
         sources = {
-            default = { 'lsp', 'path', 'snippets', 'buffer' },
+            default = { 'lsp', 'path', 'snippets', 'buffer', 'lazydev' },
+            providers = {
+                lazydev = {
+                    name = 'LazyDev',
+                    module = 'lazydev.integrations.blink',
+                }
+            }
         },
         completion = {
             documentation = {
