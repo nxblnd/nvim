@@ -1,57 +1,18 @@
-local servers = {
-    ['ansible-lint'] = {}, -- Ansible linter
-    ansiblels = {}, -- Ansible
-    angularls = {}, -- AngularJS
-    awk_ls = {}, -- AWK
-    bashls = {}, -- Bash
-    clangd = {}, -- C/C++
-    ['cmake-language-server'] = {}, -- CMake
-    cssls = {}, -- CSS
-    docker_compose_language_service = {}, -- Docker compose
-    dockerls = {}, -- Dockerfile
-    eslint = {}, -- Eslint
-    gopls = {}, -- Go
-    html = {}, -- HTML
-    java_language_server = {}, -- Java
-    jqls = {}, -- JQ
-    jsonls = {}, -- JSON
-    -- kulala_ls = {}, -- Kulala 
-    ['kulala-fmt'] = {}, -- Kulala
-    lemminx = {}, -- XML
-    lua_ls = {}, -- Lua
-    marksman = {}, -- Markdown
-    ['nginx-language-server'] = {}, -- nginx
-    pylsp = {}, -- Python
-    ruff = {}, -- Python linter
-    sqlls = {}, -- SQL
-    systemd_ls = {}, -- SystemD
-    systemdlint = {}, -- SystemD unit linter
-    texlab = {}, -- LaTeX
-    ts_ls = {}, -- JavaScript/TypeScript
-    vue_ls = {}, -- Vue
-    yamlls = {}, -- YAML
-}
-
+local servers = require('language').lsp
 local keymap = require('helpers.keymap').keymap
+local t_builtin = require('telescope.builtin')
 
 return {
     'neovim/nvim-lspconfig',
     enabled = true,
     dependencies = {
+        { 'saghen/blink.cmp' },
+        { 'williamboman/mason-lspconfig.nvim' },
+        { 'WhoIsSethDaniel/mason-tool-installer.nvim' },
         {
-            'williamboman/mason.nvim',
-            build = ':MasonUpdate',
-            opts = {
-                registries = {
-                    "github:mason-org/mason-registry",
-                },
-            },
-        },
-        {
-            'williamboman/mason-lspconfig.nvim',
-        },
-        {
-            'WhoIsSethDaniel/mason-tool-installer.nvim',
+            'mason-org/mason.nvim',
+            build = ":MasonUpdate",
+            opts = {},
         },
         {
             'j-hui/fidget.nvim',
