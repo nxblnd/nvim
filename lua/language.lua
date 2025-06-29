@@ -10,11 +10,6 @@ M.languages = {
             ansiblels = {},
         },
     },
-    angular = {
-        lsp = {
-            angularls = {},
-        },
-    },
     awk = {
         treesitter = { 'awk' },
         lsp = {
@@ -107,10 +102,14 @@ M.languages = {
             'typescript',
             'jsdoc',
             'tsx',
+            'vue',
         },
         lsp = {
             eslint = {},
             ts_ls = {},
+            angularls = {},
+            astro = {},
+            vue_ls = {},
         },
     },
     json = {
@@ -233,12 +232,6 @@ M.languages = {
         treesitter = {
             'vim',
             'vimdoc',
-        },
-    },
-    vue = {
-        treesitter = { 'vue' },
-        lsp = {
-            vue_ls = {},
         },
     },
     xml = {
