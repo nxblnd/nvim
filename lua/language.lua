@@ -102,6 +102,8 @@ M.languages = {
             'typescript',
             'jsdoc',
             'tsx',
+            'astro',
+            'angular',
             'vue',
         },
         lsp = {
