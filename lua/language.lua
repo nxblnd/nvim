@@ -10,36 +10,36 @@ M.languages = {
             ansiblels = {},
         },
     },
-    awk = {
-        treesitter = { 'awk' },
-        lsp = {
-            awk_ls = {},
-        },
-    },
+    -- awk = {
+    --     treesitter = { 'awk' },
+    --     lsp = {
+    --         awk_ls = {},
+    --     },
+    -- },
     bash = {
         treesitter = { 'bash' },
         lsp = {
             bashls = {},
         },
     },
-    charts = {
-        treesitter = {
-            'dot',
-            'gnuplot',
-        },
-    },
-    c_cpp = {
-        treesitter = {
-            'c',
-            'cpp',
-        },
-        lsp = {
-            clangd = {},
-        },
-    },
-    c_sharp = {
-        treesitter = { 'c_sharp' },
-    },
+    -- charts = {
+    --     treesitter = {
+    --         'dot',
+    --         'gnuplot',
+    --     },
+    -- },
+    -- c_cpp = {
+    --     treesitter = {
+    --         'c',
+    --         'cpp',
+    --     },
+    --     lsp = {
+    --         clangd = {},
+    --     },
+    -- },
+    -- c_sharp = {
+    --     treesitter = { 'c_sharp' },
+    -- },
     css = {
         treesitter = {
             'css',
@@ -71,12 +71,12 @@ M.languages = {
             'gitignore',
         },
     },
-    go = {
-        treesitter = { 'go' },
-        lsp = {
-            gopls = {},
-        },
-    },
+    -- go = {
+    --     treesitter = { 'go' },
+    --     lsp = {
+    --         gopls = {},
+    --     },
+    -- },
     html = {
         treesitter = { 'html' },
         lsp = {
@@ -86,16 +86,16 @@ M.languages = {
     ini = {
         treesitter = { 'ini' },
     },
-    java = {
-        treesitter = {
-            'java',
-            'javadoc',
-            'properties',
-        },
-        lsp = {
-            java_language_server = {},
-        },
-    },
+    -- java = {
+    --     treesitter = {
+    --         'java',
+    --         'javadoc',
+    --         'properties',
+    --     },
+    --     lsp = {
+    --         java_language_server = {},
+    --     },
+    -- },
     javascript = {
         treesitter = {
             'javascript',
@@ -124,12 +124,12 @@ M.languages = {
             jqls = {},
         },
     },
-    kotlin = {
-        treesitter = { 'kotlin' },
-    },
-    llvm = {
-        treesitter = { 'llvm' },
-    },
+    -- kotlin = {
+    --     treesitter = { 'kotlin' },
+    -- },
+    -- llvm = {
+    --     treesitter = { 'llvm' },
+    -- },
     lua = {
         treesitter = {
             'lua',
@@ -140,21 +140,21 @@ M.languages = {
             lua_ls = {},
         },
     },
-    lisp = {
-        treesitter = {
-            'commonlisp',
-            'clojure',
-            'scheme',
-        },
-    },
+    -- lisp = {
+    --     treesitter = {
+    --         'commonlisp',
+    --         'clojure',
+    --         'scheme',
+    --     },
+    -- },
     make = {
         treesitter = {
             'make',
             'cmake',
         },
-        lsp = {
-            ['cmake-language-server'] = {},
-        },
+        -- lsp = {
+        --     ['cmake-language-server'] = {},
+        -- },
     },
     misc = {
         treesitter = {
@@ -178,18 +178,18 @@ M.languages = {
             marksman = {},
         },
     },
-    pascal = {
-        treesitter = { 'pascal' },
-    },
-    perl = {
-        treesitter = { 'perl' },
-    },
-    php = {
-        treesitter = { 'php' },
-    },
-    powershell = {
-        treesitter = { 'powershell' },
-    },
+    -- pascal = {
+    --     treesitter = { 'pascal' },
+    -- },
+    -- perl = {
+    --     treesitter = { 'perl' },
+    -- },
+    -- php = {
+    --     treesitter = { 'php' },
+    -- },
+    -- powershell = {
+    --     treesitter = { 'powershell' },
+    -- },
     python = {
         treesitter = { 'python' },
         lsp = {
@@ -198,18 +198,18 @@ M.languages = {
             ty = {},
         },
     },
-    ruby = {
-        treesitter = { 'ruby' },
-    },
-    rust = {
-        treesitter = { 'rust' },
-    },
-    sql = {
-        treesitter = { 'sql' },
-        lsp = {
-            sqlls = {},
-        },
-    },
+    -- ruby = {
+    --     treesitter = { 'ruby' },
+    -- },
+    -- rust = {
+    --     treesitter = { 'rust' },
+    -- },
+    -- sql = {
+    --     treesitter = { 'sql' },
+    --     lsp = {
+    --         sqlls = {},
+    --     },
+    -- },
     ssh = {
     },
     systemd = {
@@ -218,15 +218,15 @@ M.languages = {
             systemdlint = {},
         },
     },
-    tex = {
-        treesitter = {
-            'latex',
-            'bibtex',
-        },
-        lsp = {
-            texlab = {},
-        },
-    },
+    -- tex = {
+    --     treesitter = {
+    --         'latex',
+    --         'bibtex',
+    --     },
+    --     lsp = {
+    --         texlab = {},
+    --     },
+    -- },
     toml = {
         treesitter = { 'toml' },
     },
