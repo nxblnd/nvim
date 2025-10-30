@@ -6,5 +6,8 @@ return {
     lazy = false,
     opts = {
         skip_confirm_for_simple_edits = true,
+        keymaps = {
+            ["<C-h>"] = "actions.toggle_hidden",
+        },
     },
 }
