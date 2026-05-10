@@ -214,7 +214,6 @@ M.languages = {
     },
     systemd = {
         lsp = {
-            systemd_ls = {},
             systemdlint = {},
         },
     },
